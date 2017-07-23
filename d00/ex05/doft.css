@@ -1,0 +1,263 @@
+body {
+  background-color: rgb(80, 80, 80);
+}
+
+.triangle-isosceles {
+  position: relative;
+  bottom: 465px;
+  left: 230px;
+  padding: 15px;
+  margin: 1em 0 3em;
+  color: #000;
+  background: #f3961c;
+  border-radius: 10px;
+  background: linear-gradient(top, #f9d835, #f3961c);
+  height: 50px;
+  width: 250px;
+}
+
+.triangle-isosceles:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 10px;
+  bottom: -30px;
+  border: 15px solid;
+  border-color: #f3961c transparent transparent #f3961c;
+}
+div.triangle-isosceles > p {
+  margin: 0px;
+  font-size: 20px;
+  font-family: Times, Arial, sans-serif;
+}
+
+div.triangle-isosceles > input:first-of-type {
+  width: 180px;
+  margin-right: 5px;
+}
+
+div.triangle-isosceles > input:last-of-type {
+  width: 51px;
+}
+
+.header {
+  width: 1400px;
+  height: 120px;
+  margin: 0px auto;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(144, 144, 144);
+  box-shadow: 5px 5px 20px #000;
+  border-radius: 10px;
+}
+
+.container {
+  width: 1365px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.header #logo {
+  width: 500px;
+  float: left;
+}
+
+.header .control {
+  float: right;
+}
+
+.header #close {
+  margin: 84px 0px;
+}
+
+.header #reload {
+  width: 20px;
+  height: 20px;
+}
+
+.header #loupe {
+  width: 200px;
+  height: 115px;
+  margin: 30px 0px;
+}
+
+.header .l_side {
+  float: left;
+}
+
+.header .r_side {
+  float: right;
+}
+
+.header .r_side #reload {
+  float: right;
+  clear: both;
+}
+
+.header .r_side #close {
+  float: right;
+  clear: both;
+}
+
+.l_sidebar {
+  width: 140px;
+  height: 435px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #000;
+  background-color: rgb(144, 144, 144);
+  float: left;
+}
+
+.container .l_sidebar #arrow {
+  display: block;
+  height: 70px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+.container .l_sidebar #hand {
+  display: block;
+  height: 70px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+.container .l_sidebar #eye {
+  display: block;
+  height: 71px;
+  width: 77px;
+  margin: 10px auto;
+  border: 5px solid red;
+  border-radius: 5px;
+}
+
+.container .l_sidebar #settings {
+  display: block;
+  height: 70px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 4px;
+}
+
+.container .l_sidebar #chat {
+  display: block;
+  height: 68px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+.content {
+  background-color: rgb(144, 144, 144);
+  width: 1025px;
+  height: 580px;
+  padding: 10px;
+  box-shadow: 5px 5px 20px #000;
+  border-radius: 10px;
+  margin: 0px auto;
+  margin-top: 20px;
+}
+
+div.clusterWrapper {
+  width: 1025px;
+  height: 580px;
+  margin: 0px auto;
+  background: url("resources/cluster.jpg") no-repeat;
+}
+
+.clusterWrapper .ikea {
+  position: relative;
+  top: 300px;
+  right: 110px;
+  width: 200px;
+  height: 250px;
+  margin: 0px auto;
+  color: blue;
+}
+
+.clusterWrapper .mac {
+  position: relative;
+  width: 220px;
+  height: 180px;
+  top: 70px;
+  left: 800px;
+}
+
+.container .r_sidebar {
+  width: 140px;
+  height: 435px;
+  position: relative;
+  left: 203px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #000;
+  background-color: rgb(144, 144, 144);
+  float: right;
+}
+
+.container .r_sidebar #book {
+  display: block;
+  height: 96px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+.container .r_sidebar #towel {
+  display: block;
+  height: 52px;
+  width: 70px;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+
+.container .r_sidebar #brick {
+  width: 120px;
+  height: 70px;
+  background: url(resources/brick.jpg);
+  margin: 10px auto;
+}
+
+.prompt_win {
+  position: relative;
+  right: 230px;
+  bottom: 93px;
+  width: 500px;
+  height: 180px;
+  border-radius: 10px;
+  background-color: rgb(136, 255, 137);
+  box-shadow: 5px 5px 20px #000;
+}
+
+.prompt_win > p {
+  padding: 10px 10px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.prompt_win > p > #big_ltr {
+  font-size: 30px;
+  font-family: serif;
+}
+
+.prompt_win > p > #shadow_text {
+  text-shadow: 5px 5px 6px #ff0000;
+}
+
+.prompt_win > p > #cursive {
+  font-style: italic;
+}
+
+.prompt_win > p > #text_field {
+  width: 380px;
+}
+
+.prompt_win > p > #button {
+  background-color: rgb(231, 231, 231);
+  border: 1px solid rgb(153, 158, 153);
+  border-radius: 1px;
+  height: 18px;
+  margin-left: 5px;
+}
