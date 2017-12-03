@@ -71,19 +71,51 @@ function  getAnswer()
   ((el === 'y' || el === 'yes')) ? getFirstQuestion() : document.getElementById('game_text').innerHTML = 'Maybe next time.';
 }
 
+// function imageExists(image_url){
+
+//     var http = new XMLHttpRequest();
+
+//     http.open('HEAD', image_url, false);
+//     http.send();
+
+//     return http.status != 404;
+// }
+
+function checkImage(imageSrc)
+{
+  var image = new Image(); 
+  image.src = imageSrc;
+  return ((image.width == 0) ? false : true);
+}
+
 function  getCorrectorImg()
 {
   var aka = prompt("Enter you 42's aka", "rbozhko");
   aka = aka.replace(/\s/g, '');
-  document.getElementById("clusterWrapper").style.background = "url('https://cdn.intra.42.fr/users/medium_" + aka + ".jpg') no-repeat";
-  document.getElementById("clusterWrapper").style.marginLeft = "360px";
-  document.getElementById('corr_msg').getElementsByTagName('a')[0].href = "https://profile.intra.42.fr/users/" + aka;
-  var prompt_win = document.getElementById("corr_profile");
-  prompt_win.innerHTML = "Oh look here, "+ aka +". Is it yours account photo? :)";
-  prompt_win.style.fontSize = "20px";
-  prompt_win.style.color = "black";
-  prompt_win.style.textDecoration = "none";
-  prompt_win.style.position = "relative";
-  prompt_win.style.left = "320px";
-  prompt_win.style.top = "390px";
+  if (checkImage("https://cdn.intra.42.fr/users/medium_" + aka + ".jpg"))
+  {
+    document.getElementById("clusterWrapper").style.background = "url('https://cdn.intra.42.fr/users/medium_" + aka + ".jpg') no-repeat center center";
+    // document.getElementById("clusterWrapper").style.marginLeft = "360px";
+    document.getElementById('corr_msg').getElementsByTagName('a')[0].href = "https://profile.intra.42.fr/users/" + aka;
+    var prompt_win = document.getElementById("corr_profile");
+    prompt_win.innerHTML = "Oh look over here, <strong>"+ aka + "</strong>. Is it yours account photo? :)";
+    prompt_win.style.fontSize = "20px";
+    prompt_win.style.color = "black";
+    prompt_win.style.textDecoration = "none";
+    prompt_win.style.position = "relative";
+    prompt_win.style.left = "320px";
+    prompt_win.style.top = "50px";
+  }
+  else
+  {
+    document.getElementById("clusterWrapper").style.background = "url('resources/404_error.gif') no-repeat center center";
+    var prompt_win = document.getElementById("corr_profile");
+    prompt_win.innerHTML = "Sorry, but we haven't found no <strong>" + aka + "</strong> in intra's database.";
+    prompt_win.style.fontSize = "20px";
+    prompt_win.style.color = "black";
+    prompt_win.style.textDecoration = "none";
+    prompt_win.style.position = "relative";
+    prompt_win.style.left = "290px";
+    prompt_win.style.top = "20px";
+  }
 }
