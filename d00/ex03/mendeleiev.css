@@ -1,0 +1,148 @@
+* {
+      padding: 0px;
+      margin: 0px;
+      font-size: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 40px auto;
+    }
+
+    td {
+      height: 100px;
+      width: 100px;
+      border: 2px solid black;
+      font-family: serif;
+      font-size: 1em;
+      text-align: center;
+      font-weight: 700;
+      padding: 2px;
+    }
+
+    th {
+      text-align: center;
+      border: 2px solid black;
+      font-size: 1.25em;
+    }
+
+    img {
+      height: 15em;
+      width: 17.5em;
+    }
+
+    .elem {
+      text-align: center;
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    .infoSize {
+      font-size: 0.65em;
+    }
+
+    .number {
+      vertical-align: bottom;
+      text-align: left;
+    }
+
+    .weight {
+      vertical-align: top;
+      text-align: right;
+    }
+
+    .blank {
+      border: 0px;
+    }
+
+    .noble_gas {
+      background-color: rgb(3, 169, 244);
+    }
+
+    .non_metal {
+      background-color: rgb(92, 197, 76);
+    }
+
+    .post_metal {
+      background-color: rgb(144, 164, 174);
+    }
+
+    .trans_metal {
+      background-color: rgb(198, 137, 137);
+    }
+
+    .actionoid {
+      background-color: rgb(179, 157, 219);
+    }
+
+    .lanthanoid {
+      background-color: rgb(246, 153, 136);
+    }
+
+    .earth_metal {
+      background-color: rgb(255, 193, 7);
+    }
+
+    .alkali_metal {
+      background-color: rgb(255, 152, 0);
+    }
+
+    .halogen {
+      background-color: rgb(38, 198, 218);
+    }
+
+    .metalloid {
+      background-color: rgb(77, 182, 172);
+    }
+
+    .imgCenter {
+      text-align: center;
+      height: 362px;
+    }
+
+    .imgContainer {
+      display: inline-block;
+      height: 362px;
+    }
+
+    h1 {
+      margin: 0px;
+      font-family: Times;
+      font-size: 2.5em;
+    }
+
+    .scene {
+      width: 100px;
+      height: 75px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .card.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card__face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .card__face--front {
+    }
+
+    .card__face--back {
+      transform: rotateY(180deg);
+    }
+
+    .history {
+      margin: 30px auto;
+      font-size: 25px;
+    }

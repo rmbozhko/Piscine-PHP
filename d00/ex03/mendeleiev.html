@@ -3,126 +3,12 @@
   <head>
     <title>Periodic Table</title>
     <meta charset="utf-8"/>
-    <style>
-    * {
-      padding: 0px;
-      margin: 0px;
-      font-size: 20px;
-    }
-
-    table {
-      border-collapse: collapse;
-      margin: 40px auto;
-    }
-
-    td {
-      height: 100px;
-      width: 100px;
-      border: 2px solid black;
-      font-family: serif;
-      font-size: 1em;
-      text-align: center;
-      font-weight: 700;
-      padding: 2px;
-    }
-
-    th {
-      text-align: center;
-      border: 2px solid black;
-      font-size: 1.25em;
-    }
-
-    img {
-      height: 15em;
-      width: 17.5em;
-    }
-
-    .elem {
-      text-align: center;
-      font-weight: bold;
-      font-size: 2em;
-    }
-
-    .infoSize {
-      font-size: 0.65em;
-    }
-
-    .number {
-      vertical-align: bottom;
-      text-align: left;
-    }
-
-    .weight {
-      vertical-align: top;
-      text-align: right;
-    }
-
-    .blank {
-      border: 0px;
-    }
-
-    .noble_gas {
-      background-color: rgb(3, 169, 244);
-    }
-
-    .non_metal {
-      background-color: rgb(92, 197, 76);
-    }
-
-    .post_metal {
-      background-color: rgb(144, 164, 174);
-    }
-
-    .trans_metal {
-      background-color: rgb(198, 137, 137);
-    }
-
-    .actionoid {
-      background-color: rgb(179, 157, 219);
-    }
-
-    .lanthanoid {
-      background-color: rgb(246, 153, 136);
-    }
-
-    .earth_metal {
-      background-color: rgb(255, 193, 7);
-    }
-
-    .alkali_metal {
-      background-color: rgb(255, 152, 0);
-    }
-
-    .halogen {
-      background-color: rgb(38, 198, 218);
-    }
-
-    .metalloid {
-      background-color: rgb(77, 182, 172);
-    }
-
-    .imgCenter {
-      text-align: center;
-      height: 362px;
-    }
-
-    .imgContainer {
-      display: inline-block;
-      height: 362px;
-    }
-
-    h1 {
-      margin: 0px;
-      font-family: Times;
-      font-size: 2.5em;
-    }
-
-    </style>
+    <link rel="stylesheet" href="mendeleiev.css"/>
   </head>
   <body>
     <div class="imgCenter">
       <div class="imgContainer">
-        <img src="https://unit.ua/img/vi.jpg" alt="Unit Factory logo" title="Unit Factory"/>
+        <img src="https://apply.unit.ua/assets/img/logo.png?v043" alt="Unit Factory logo" title="Unit Factory"/>
         <h1>Periodic Table by Dmitri Mendeleev</h1>
       </div>
     </div>
@@ -187,9 +73,18 @@
         <td class="blank">
         </td>
         <td class="noble_gas">
-          <div class="weight infoSize">4.0026</div>
-          <div class="elem">He</div>
-          <div class="number infoSize">2</div>
+          <div class="scene scene--card">
+            <div class="card">
+              <div class="card__face card__face--back">
+                <div class="history">Helium</div>
+              </div>
+              <div class="card__face card__face--front">
+                <div class="weight infoSize">4.0026</div>
+                <div class="elem">He</div>
+                <div class="number infoSize">2</div>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
       <tr>
@@ -807,5 +702,6 @@
         <div class="number infoSize">103</div>
       </td>
     </table>
+    <script type="text/javascript" src="mendeleiev.js"></script>
   </body>
 </html>
