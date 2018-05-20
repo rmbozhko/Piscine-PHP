@@ -1,10 +1,14 @@
-var card = document.querySelectorAll('.card')[0];
-if (card)
+var cards = document.querySelectorAll('.card');
+
+if (cards)
 {
 	console.log("Elements successfully found.");
-	card.addEventListener( 'click', function() {
-	  card.classList.toggle('is-flipped');
-	});
+	
+	cards.forEach(function (item, idx) {
+        item.addEventListener('click', function () {
+            this.classList.toggle('is-flipped');
+        });
+    });
 }
 else
 {
