@@ -140,9 +140,6 @@
 
     .card__face--back {
       transform: rotateY(180deg);
-    }
-
-    .history {
       margin: 30px auto;
-      font-size: 25px;
+      font-size: 1em;
     }
