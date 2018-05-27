@@ -5,6 +5,44 @@ function  googleQuery()
   window.open("https://www.google.com.ua/search?q="+query, "_blank");
 }
 
+function imgControllPanel()
+{
+  document.getElementById('text_field').placeholder = '[ canyon | kremlin | spacex | rio | chaes | cluster | mode ]';
+}
+
+
+function getViewImg ()
+{
+  var el_val = document.getElementById('text_field').value;
+  console.log(el_val);
+  switch (el_val) {
+    case "canyon":
+      document.getElementById("clusterWrapper").style.background = "url('resources/grand_canyon.jpg')";
+      break ;
+    case "kremlin":
+      document.getElementById("clusterWrapper").style.background = "url('resources/kremlin.jpg')";
+      break ;
+    case "spacex":
+      document.getElementById("clusterWrapper").style.background = "url('resources/spacex.jpg')";
+      break ;
+    case "rio":
+      document.getElementById("clusterWrapper").style.background = "url('resources/rio.jpg')";
+      break ;
+    case "chaes":
+      document.getElementById("clusterWrapper").style.background = "url('resources/chaes.jpg')";
+      break ;
+    case "cluster":
+      document.getElementById("clusterWrapper").style.background = "url('resources/cluster.jpg')";
+      break;
+    case "mode":
+      start_slider();
+      break;
+    default:
+      document.getElementById("clusterWrapper").style.background = "url('resources/default.jpg')";
+      break ;
+  }
+}
+
 function  insertGameField()
 {
   var canvs = document.createElement('canvas');
@@ -107,11 +145,18 @@ function  getAnswer()
 //     return http.status != 404;
 // }
 
-function checkImage(imageSrc)
+function checkImage(url)
 {
-  var image = new Image(); 
-  image.src = imageSrc;
-  return ((image.width == 0) ? false : true);
+  var req= new XMLHttpRequest();
+  try {
+    req.open("HEAD", url, false);
+    req.send(null);   
+    return req.status== 200 ? true : false;
+  }
+  catch (er) {
+    return false;
+  }
+
 }
 
 function  getCorrectorImg()
