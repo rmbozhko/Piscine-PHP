@@ -265,9 +265,15 @@ div.clusterWrapper {
 
 canvas {
   background: #eee;
-  /*display: block;*/
   width: 100%;
   height: 100%;
   position: absolute;
   margin: 0 auto;
 }
+
+img.img {
+  position: absolute;
+  transition: opacity .5s ease-in;
+}
+
+img.img + img.img { opacity: 0; }

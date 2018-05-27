@@ -10,8 +10,6 @@
        <img src="resources/day_of_the_42.png" id="logo" title="logo" alt="logo"/>
        <div class="control">
          <div class="l_side" onclick="googleQuery()">
-           <!--http://callmenick.com/post/expanding-search-bar-using-css-transitions
-            Best way to make proper query field -->
            <img src="resources/loupe.png" id="loupe"/>
          </div>
          <div class="r_side">
@@ -24,15 +22,14 @@
       <div class="l_sidebar">
           <img src="resources/arrow.png" id="arrow" title="Advance" alt="Advance" />
           <img src="resources/main.png" id="hand" title="Take" alt="Take" />
-          <img src="resources/oeil.png" id="eye" title="Look" alt="Look" onclick="window.open('doft_img.html', '_blank')"/>
+          <img src="resources/oeil.png" id="eye" title="Look" alt="Look" onclick="imgControllPanel()"/>
           <img src="resources/outil.png" id="settings" title="Use" alt="Use" />
           <img src="resources/chat-icon.png" id="chat" title="Speak" alt="Speak" onclick="viewBubbleDiv()"/>
       </div>
       <div class="r_sidebar">
         <img src="resources/book.png" id="book" onclick="getCorrectorImg()"/>
         <img src="resources/towel.png" id="towel" />
-        <!-- <div id="brick" onclick="window.open('doft_game.html', '_blank')"></div> -->
-        <div id="brick" onclick="insertGameField()")></div>
+        <div id="brick" onclick="insertGameField()"></div>
       </div>
         <div class="content">
           <div id="corr_msg"><a href="#" id="corr_profile"></a></div>
@@ -56,5 +53,6 @@
     <div class="clear"></div>
     <script src="doft_game.js"></script>
     <script src="doft.js"></script>
+    <script src="doft_slide.js"></script>
   </body>
 </html

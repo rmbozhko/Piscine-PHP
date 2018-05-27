@@ -3,12 +3,12 @@
 function  start_game(canvas)
 {
   // var canvas = document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d"); // actual tool to paint on canvas
-  var ballRadius = 4;//10;
-  var x = Math.random() * canvas.width - ballRadius;//canvas.width / 2;
-  var y = canvas.height - 30;
-  var paddleWidth = 50;//75;
-  var paddleX = (canvas.width - paddleWidth) / 2;
+var ctx = canvas.getContext("2d"); // actual tool to paint on canvas
+var ballRadius = 4;//10;
+var x = Math.random() * canvas.width - ballRadius;//canvas.width / 2;
+var y = canvas.height - 30;
+var paddleWidth = 50;//75;
+var paddleX = (canvas.width - paddleWidth) / 2;
 
 var dx = 1.2;//2;
 var dy = -1.2;//-2;
@@ -18,8 +18,8 @@ var rightPressed = false;
 var interval = 10;
 var brickWidth = 25;//75;
 var brickHeight = 10;//20;
-var brickRowCount = 5;// Math.floor((Math.random() * 5) + 1);
-var brickColumnCount = 5;// Math.floor((Math.random() * 5) + 1);
+var brickRowCount = 4;//5;// Math.floor((Math.random() * 5) + 1);
+var brickColumnCount = 4;//5;// Math.floor((Math.random() * 5) + 1);
 var brickPadding = 10;
 var brickOffsetTop = 15;//30;
 var brickOffsetLeft = (canvas.width - ((brickRowCount + 2) * brickWidth)) / 2;//30;
@@ -92,7 +92,7 @@ function  collisionDetection()
 
         if(!(brickRowCount - rows_remaining))
         {
-          alert("Congratulations! You have won!\nAnd your score is: " + score + "\nAnd your time is: " + time + "\nLifes left: " + lifes);
+          alert("Congratulations! You have won!\nAnd your score is: " + score + "\nAnd your time is: " + time + "\nLifes left: " + lifes + "\nAnd now get back to work!");
           document.location.reload();
         }
       }
@@ -179,7 +179,7 @@ function draw() {
       lifes--;
       if (lifes == 0)
       {
-        alert("Game Over!");
+        alert("Game Over!\nGet back to work!");
         document.location.reload();
       }
       else {
