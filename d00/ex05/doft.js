@@ -5,6 +5,32 @@ function  googleQuery()
   window.open("https://www.google.com.ua/search?q="+query, "_blank");
 }
 
+function  insertGameField()
+{
+  var canvs = document.createElement('canvas');
+  var audio = document.createElement('audio');
+  var prompt_win = document.getElementsByClassName("prompt_win")[0];
+  
+  prompt_win.style.display = "none";
+  audio.hidden = true;
+  audio.src = "";
+  audio.type = "audio/mpeg";
+  audio.id = "audio";
+  audio.controls = 'controls';
+  audio.autoplay = 'autoplay';
+  canvs.setAttribute("id", "myCanvas");
+  
+  var myNode = document.getElementById("clusterWrapper");
+  while (myNode.firstChild)
+    myNode.removeChild(myNode.firstChild);
+
+  myNode.style.background = "url(\'\')";
+  myNode.appendChild(audio);
+  myNode.appendChild(canvs);
+  
+  start_game(canvs);
+}
+
 function  getFirstQuestionAnswer()
 {
   var el = document.getElementById('play_quiz').value;

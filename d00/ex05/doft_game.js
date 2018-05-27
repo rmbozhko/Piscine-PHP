@@ -1,32 +1,38 @@
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d"); // actual tool to paint on canvas
-var ballRadius = 10;
-var x = Math.random() * canvas.width - ballRadius;//canvas.width / 2;
-var y = canvas.height - 30;
-var dx = 2;
-var dy = -2;
-var paddleWidth = 75;
-var paddleHeight = 10;
-var paddleX = (canvas.width - paddleWidth) / 2;
+'use strict';
+
+function  start_game(canvas)
+{
+  // var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d"); // actual tool to paint on canvas
+  var ballRadius = 4;//10;
+  var x = Math.random() * canvas.width - ballRadius;//canvas.width / 2;
+  var y = canvas.height - 30;
+  var paddleWidth = 50;//75;
+  var paddleX = (canvas.width - paddleWidth) / 2;
+
+var dx = 1.2;//2;
+var dy = -1.2;//-2;
+var paddleHeight = 5;//10;
 var leftPressed = false;
 var rightPressed = false;
 var interval = 10;
-var brickWidth = 75;//Math.floor((Math.random() * 15) + 60);
-var brickHeight = 20;//Math.floor((Math.random() * 5) + 16);
+var brickWidth = 25;//75;
+var brickHeight = 10;//20;
 var brickRowCount = 5;// Math.floor((Math.random() * 5) + 1);
 var brickColumnCount = 5;// Math.floor((Math.random() * 5) + 1);
 var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
+var brickOffsetTop = 15;//30;
+var brickOffsetLeft = (canvas.width - ((brickRowCount + 2) * brickWidth)) / 2;//30;
 var bricks = [];
 var score = 0;
 var time = 0;
 var lifes = 3;
+var touched_paddle = true;
 
-for(c = 0; c < brickColumnCount; c++)
+for(var c = 0; c < brickColumnCount; c++)
 {
   bricks[c] = [];
-  for(r = 0; r < brickRowCount; r++)
+  for(var r = 0; r < brickRowCount; r++)
   {
       bricks[c][r] = { x: 0, y: 0, hit: 0};
   }
@@ -77,8 +83,14 @@ function  collisionDetection()
       {
         dy = -dy;
         b.hit = 1;
-        score += 10;
-        if (score === brickColumnCount * brickRowCount * 10)
+        score += (touched_paddle) ? 10 : 20;
+        touched_paddle = (touched_paddle) ? false : touched_paddle;
+
+        var rows_remaining = 0;
+        for (let brick of bricks)
+          rows_remaining += (brick.some(e => e.hit == 0) ? 0 : 1);
+
+        if(!(brickRowCount - rows_remaining))
         {
           alert("Congratulations! You have won!\nAnd your score is: " + score + "\nAnd your time is: " + time + "\nLifes left: " + lifes);
           document.location.reload();
@@ -90,16 +102,17 @@ function  collisionDetection()
 
 function  drawGameInfo()
 {
-  ctx.font = "16px Arial";
+  const font = "8px Arial";
+  ctx.font = font;
   ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
-  ctx.font = "16px Arial";
+  ctx.fillText("Score: " + score, 8, 10);
+  ctx.font = font;
   ctx.fillStyle = "#0095DD";
   time = Math.floor(performance.now()) / 1000;
-  ctx.fillText("Time: " + Math.floor(performance.now()) / 1000 , 370, 20);
-  ctx.font = "16px Arial";
+  ctx.fillText("Time: " + time , canvas.width - 55, 10);
+  ctx.font = font;
   ctx.fillStyle = "#0095DD";
-  ctx.fillText("Lifes: " + lifes, canvas.width / 2, 20);
+  ctx.fillText("Lifes: " + lifes, (canvas.width / 2) - 20, 10);
 }
 
 function drawBricks() {
@@ -159,6 +172,7 @@ function draw() {
       document.getElementById('audio').src = "paddle_collision.mp3";
       dy = 1.05 * -dy;
       dx = 1.05 * dx;
+      touched_paddle = true;
     }
     else
     {
@@ -183,3 +197,4 @@ function draw() {
 }
 
 draw();
+}
